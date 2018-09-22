@@ -3,9 +3,14 @@ package com.innocv.votium.service;
 import com.innocv.votium.domain.Member;
 import com.innocv.votium.dto.MemberDto;
 import com.innocv.votium.dto.requests.RequestDto;
+import com.innocv.votium.repository.MemberRepository;
 import org.apache.commons.codec.binary.Base64;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class LoginService {
+
+    @Autowired
+    private MemberRepository memberRepository;
 
     public MemberDto login(String username, String password)
     {
