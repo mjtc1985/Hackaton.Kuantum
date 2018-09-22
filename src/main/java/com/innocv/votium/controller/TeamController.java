@@ -6,6 +6,7 @@ import com.innocv.votium.service.LoginService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
@@ -21,8 +22,7 @@ public class TeamController {
     @PostMapping("getMemberInfo")
     public List<MemberDto> getTeamMembers(@RequestBody MemberInfoRequestDto request){
 
-        MemberDto result = loginService.getMemberFromRequest(request);
-        return result;
+        throw  new NotImplementedException();
     }
 
 
