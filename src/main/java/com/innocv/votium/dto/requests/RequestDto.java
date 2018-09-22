@@ -5,9 +5,4 @@ import lombok.Data;
 @Data
 public class RequestDto {
     private String token;
-
-    public String getToken() {
-        return token;
-    }
-
 }
