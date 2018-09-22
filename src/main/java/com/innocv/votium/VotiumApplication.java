@@ -1,16 +1,15 @@
-package com.innocv.votium;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.web.WebApplicationInitializer;
-
-@SpringBootApplication
-//@EnableWebSecurity
-public class VotiumApplication extends SpringBootServletInitializer implements WebApplicationInitializer {
-
-    public static void main(String[] args) {
-        SpringApplication.run(VotiumApplication.class, args);
-    }
-}
+//package com.innocv.votium;
+//
+//import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
+//import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+//import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+//import org.springframework.web.WebApplicationInitializer;
+//
+//@SpringBootApplication
+//public class VotiumApplication extends SpringBootServletInitializer implements WebApplicationInitializer {
+//
+//    public static void main(String[] args) {
+//        SpringApplication.run(VotiumApplication.class, args);
+//    }
+//}

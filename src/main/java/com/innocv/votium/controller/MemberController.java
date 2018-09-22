@@ -2,24 +2,25 @@ package com.innocv.votium.controller;
 
 import com.innocv.votium.dto.LoginDto;
 import com.innocv.votium.dto.MemberDto;
+import com.innocv.votium.dto.requests.MemberInfoRequestDto;
 import com.innocv.votium.service.LoginService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class LoginController {
+public class MemberController {
 
     private LoginService loginService;
-    LoginController(){
+    MemberController(){
         loginService = new LoginService();
     }
 
 
-    @PostMapping("login")
-    public MemberDto login(@RequestBody LoginDto loginDto){
+    @PostMapping("getMemberInfo")
+    public MemberDto getMemberInfo(@RequestBody MemberInfoRequestDto request){
 
-        MemberDto result = loginService.login(loginDto.getUser(), loginDto.getPassword());
+        MemberDto result = loginService.getUserIdFromToken(request);
         return result;
     }
 

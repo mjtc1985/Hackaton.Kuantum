@@ -1,6 +1,8 @@
 package com.innocv.votium.service;
 
+import com.innocv.votium.domain.Member;
 import com.innocv.votium.dto.MemberDto;
+import com.innocv.votium.dto.requests.RequestDto;
 import org.apache.commons.codec.binary.Base64;
 
 public class LoginService {
@@ -9,14 +11,20 @@ public class LoginService {
     {
         String userId = getUserId(username, password);
 
+        MemberDto dto = this.getMemberFromUserId(userId);
 
+        return dto;
+
+    }
+
+    public MemberDto getMemberFromUserId(String userId)
+    {
         //Some magic code here
         MemberDto dto = new MemberDto();
         dto.setFullName("Pablo Maria");
         dto.setUserId(userId);
         dto.setRanking(1);
         return dto;
-
     }
 
     private String getUserId(String username, String Password) {
@@ -38,6 +46,15 @@ public class LoginService {
         String userId = new String(userIdBytes);
 
         return userId;
+    }
+
+    public MemberDto getMemberFromRequest(RequestDto request)
+    {
+        String userId = getUserIdFromToken(request.getToken());
+        MemberDto member = getMemberFromUserId(userId);
+
+        return member;
+
     }
 
 }
