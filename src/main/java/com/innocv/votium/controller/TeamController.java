@@ -21,10 +21,6 @@ public class TeamController {
         loginService = new LoginService();
     }
 
-    public List<TeamDto> getTeamDtoList(){
-
-    }
-
     @PostMapping("getMemberInfo")
     public List<MemberDto> getTeamMembers(@RequestBody MemberInfoRequestDto request){
 

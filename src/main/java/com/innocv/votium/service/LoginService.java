@@ -2,12 +2,19 @@ package com.innocv.votium.service;
 
 import com.innocv.votium.domain.Member;
 import com.innocv.votium.dto.MemberDto;
+import com.innocv.votium.dto.mapper.RequestMapper;
 import com.innocv.votium.dto.requests.RequestDto;
 import com.innocv.votium.repository.MemberRepository;
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginService {
+
+    @Autowired
+    private RequestMapper requestMapper;
 
     @Autowired
     private MemberRepository memberRepository;
@@ -15,21 +22,21 @@ public class LoginService {
     public MemberDto login(String username, String password)
     {
         String userId = getUserId(username, password);
-
         MemberDto dto = this.getMemberFromUserId(userId);
-
         return dto;
 
     }
 
     public MemberDto getMemberFromUserId(String userId)
     {
-        //Some magic code here
-        MemberDto dto = new MemberDto();
-        dto.setFullName("Pablo Maria");
-        dto.setUserId(userId);
-        dto.setRanking(1);
-        return dto;
+        return requestMapper.mapEntityToDto(memberRepository.findByUserId(userId));
+    }
+
+    public List<MemberDto> getTeamMembers(Long teamId)
+    {
+        List<MemberDto> memberList = new ArrayList<MemberDto>();
+        memberRepository.findByTeamId(teamId).forEach(item -> memberList.add(requestMapper.mapEntityToDto(item)));
+        return memberList;
     }
 
     private String getUserId(String username, String Password) {
