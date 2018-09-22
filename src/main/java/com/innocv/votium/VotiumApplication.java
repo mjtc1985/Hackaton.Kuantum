@@ -8,8 +8,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.web.WebApplicationInitializer;
 
 @SpringBootApplication
-@EnableJdbcRepositories
-@EnableLdapSecurity
 public class VotiumApplication extends SpringBootServletInitializer implements WebApplicationInitializer {
 
     public static void main(String[] args) {
