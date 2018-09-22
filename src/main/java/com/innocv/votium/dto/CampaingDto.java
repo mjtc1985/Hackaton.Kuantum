@@ -1,6 +1,9 @@
 package com.innocv.votium.dto;
+import lombok.Data;
+
 import java.util.*;
 
+@Data
 public class CampaingDto {
     CampaingDto()
     {
@@ -14,39 +17,5 @@ public class CampaingDto {
     private Date endDate;
     private  List<VoteDto> votes;
 
-    public Date getEndDate() {
-        return endDate;
-    }
 
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public List<VoteDto> getVotes() {
-        return votes;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public void setFinished(boolean finished) {
-        isFinished = finished;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setVotes(List<VoteDto> votes) {
-        this.votes = votes;
-    }
 }
