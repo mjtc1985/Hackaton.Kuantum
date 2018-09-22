@@ -5,12 +5,13 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	"os"
 )
 
 type Person struct {
-	ID        string   `json:"id,omitempty"`
-	Firstname string   `json:"firstname,omitempty"`
-	Lastname  string   `json:"lastname,omitempty"`
+	ID        string `json:"id,omitempty"`
+	Firstname string `json:"firstname,omitempty"`
+	Lastname  string `json:"lastname,omitempty"`
 }
 
 type LoginDto struct {
@@ -22,7 +23,9 @@ func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/people", GetPeople).Methods("GET")
 	router.HandleFunc("/login", Login).Methods("POST")
-	log.Fatal(http.ListenAndServe(":8000", router))
+	//log.Fatal(http.ListenAndServe(":8000", router))
+	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), router))
+
 }
 
 func GetPeople(w http.ResponseWriter, r *http.Request) {
