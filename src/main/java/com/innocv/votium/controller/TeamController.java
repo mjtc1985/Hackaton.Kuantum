@@ -17,18 +17,8 @@ import java.util.List;
 public class TeamController {
 
     private LoginService loginService;
-    TeamController(){
+
+    public TeamController(){
         loginService = new LoginService();
     }
-
-    @PostMapping("getMemberInfo")
-    public List<MemberDto> getTeamMembers(@RequestBody MemberInfoRequestDto request){
-
-        throw  new NotImplementedException();
-    }
-
-
-
-
-
 }
