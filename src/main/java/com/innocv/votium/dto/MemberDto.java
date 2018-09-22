@@ -8,5 +8,7 @@ public class MemberDto {
     private String fullName;
     private int ranking;
     private long id;
+    private  long teamId;
+    private TeamDto team;
 
 }
