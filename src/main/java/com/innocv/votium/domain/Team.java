@@ -7,5 +7,8 @@ public class Team {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+    private String user;
+    private long teamId;
+
 
 }

@@ -20,6 +20,6 @@ public class Vote {
     private long candidateId;
     private int value;
     private Date date;
-
+    //Campaing
     private long campaignId;
 }
