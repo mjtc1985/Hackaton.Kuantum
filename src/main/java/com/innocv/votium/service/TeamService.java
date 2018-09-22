@@ -1,13 +1,14 @@
 package com.innocv.votium.service;
 
-import com.innocv.votium.domain.Member;
 import com.innocv.votium.dto.MemberDto;
 import com.innocv.votium.repository.TeamRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeamService {
+@Service
+public class TeamService implements ITeamService {
 
     private LoginService loginService;
     private TeamRepository teamRepository;
@@ -18,6 +19,9 @@ public class TeamService {
         this.loginService = loginService;
     }
 
+
+
+    @Override
     public List<MemberDto> getTeamMembers(MemberDto member)
     {
         //Some SQL magic here

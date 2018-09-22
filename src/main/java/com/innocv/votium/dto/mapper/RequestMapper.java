@@ -2,8 +2,8 @@ package com.innocv.votium.dto.mapper;
 
 import com.innocv.votium.domain.Campaign;
 import com.innocv.votium.domain.Member;
-import com.innocv.votium.domain.Vote;
 import com.innocv.votium.domain.Team;
+import com.innocv.votium.domain.Vote;
 import com.innocv.votium.dto.CampaignDto;
 import com.innocv.votium.dto.MemberDto;
 import com.innocv.votium.dto.TeamDto;

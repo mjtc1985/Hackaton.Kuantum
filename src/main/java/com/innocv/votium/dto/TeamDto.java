@@ -1,6 +1,7 @@
 package com.innocv.votium.dto;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class TeamDto {
