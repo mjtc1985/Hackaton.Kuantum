@@ -13,9 +13,15 @@ type Person struct {
 	Lastname  string   `json:"lastname,omitempty"`
 }
 
+type LoginDto struct {
+	User     string `json:"user,omitempty"`
+	Password string `json:"password,omitempty"`
+}
+
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/people", GetPeople).Methods("GET")
+	router.HandleFunc("/login", Login).Methods("POST")
 	log.Fatal(http.ListenAndServe(":8000", router))
 }
 
@@ -26,4 +32,12 @@ func GetPeople(w http.ResponseWriter, r *http.Request) {
 	people = append(people, Person{ID: "3", Firstname: "Francis", Lastname: "Sunday"})
 
 	json.NewEncoder(w).Encode(people)
+}
+
+func Login(w http.ResponseWriter, r *http.Request) {
+	//params := mux.Vars(r)
+	var loginDto LoginDto
+	_ = json.NewDecoder(r.Body).Decode(&loginDto)
+
+	json.NewEncoder(w).Encode(loginDto)
 }
