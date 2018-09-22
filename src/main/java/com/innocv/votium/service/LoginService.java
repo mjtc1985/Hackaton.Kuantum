@@ -23,8 +23,10 @@ public class LoginService implements ILoginService {
     @Override
     public MemberDto login(String username, String password)
     {
-        String userId = getUserId(username, password);
-        MemberDto dto = this.getMemberFromUserId(userId);
+        MemberDto dto = new MemberDto();
+        dto.setFullName(username);
+        dto.setUserId("1");
+        dto.setRanking(1);
         return dto;
 
     }
@@ -32,7 +34,12 @@ public class LoginService implements ILoginService {
     @Override
     public MemberDto getMemberFromUserId(String userId)
     {
-        return requestMapper.mapEntityToDto(memberRepository.findByUserId(userId));
+//        return requestMapper.mapEntityToDto(memberRepository.findByUserId(userId));
+        MemberDto dto = new MemberDto();
+        dto.setFullName("Pablo Maria");
+        dto.setUserId(userId);
+        dto.setRanking(1);
+        return dto;
     }
 
     private String getUserId(String username, String Password) {
