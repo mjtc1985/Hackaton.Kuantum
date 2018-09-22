@@ -35,14 +35,6 @@ public class LoginService implements ILoginService {
         return requestMapper.mapEntityToDto(memberRepository.findByUserId(userId));
     }
 
-    @Override
-    public List<MemberDto> getTeamMembers(Long teamId)
-    {
-        List<MemberDto> memberList = new ArrayList<MemberDto>();
-        memberRepository.findByTeamId(teamId).forEach(item -> memberList.add(requestMapper.mapEntityToDto(item)));
-        return memberList;
-    }
-
     private String getUserId(String username, String Password) {
         //TODO Some magic login code here
         return "a1b2c3d4";

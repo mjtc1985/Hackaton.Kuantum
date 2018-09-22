@@ -10,7 +10,7 @@ public interface ILoginService {
 
     MemberDto getMemberFromUserId(String userId);
 
-    List<MemberDto> getTeamMembers(Long teamId);
+
 
     String generateToken(String userId);
 

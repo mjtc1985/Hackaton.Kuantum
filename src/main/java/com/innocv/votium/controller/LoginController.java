@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginController {
 
     private LoginService loginService;
-    LoginController(){
-        loginService = new LoginService();
-    }
-
 
     @PostMapping("login")
     public MemberDto login(@RequestBody LoginDto loginDto){
