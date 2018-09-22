@@ -7,5 +7,7 @@ public class RequestDto {
     private String token;
 
 
-
+    public String getToken() {
+        return token;
+    }
 }

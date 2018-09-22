@@ -17,7 +17,7 @@ public class TeamController {
 
 
     @PostMapping("getMemberInfo")
-    public MemberDto getTeamMembers(@RequestBody MemberInfoRequestDto request){
+    public List<MemberDto> getTeamMembers(@RequestBody MemberInfoRequestDto request){
 
         MemberDto result = loginService.getMemberFromRequest(request);
         return result;

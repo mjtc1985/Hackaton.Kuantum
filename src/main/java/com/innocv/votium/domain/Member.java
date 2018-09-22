@@ -1,5 +1,8 @@
 package com.innocv.votium.domain;
 
+import lombok.Data;
+
+@Data
 public class Member {
 
     private long id;
