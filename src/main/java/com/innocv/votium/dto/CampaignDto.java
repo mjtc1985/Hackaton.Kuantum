@@ -5,7 +5,7 @@ import java.util.*;
 
 @Data
 public class CampaignDto {
-    CampaignDto()
+    public CampaignDto()
     {
         this.votes = new ArrayList<VoteDto>();
     }
