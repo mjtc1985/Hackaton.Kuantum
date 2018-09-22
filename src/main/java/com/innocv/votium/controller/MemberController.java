@@ -20,7 +20,7 @@ public class MemberController {
     @PostMapping("getMemberInfo")
     public MemberDto getMemberInfo(@RequestBody MemberInfoRequestDto request){
 
-        MemberDto result = loginService.getUserIdFromToken(request);
+        MemberDto result = loginService.getMemberFromRequest(request);
         return result;
     }
 
