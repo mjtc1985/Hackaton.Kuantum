@@ -10,7 +10,7 @@ public class TeamService {
 
     private LoginService loginService;
 
-    TeamService(LoginService loginService)
+    public TeamService(LoginService loginService)
     {
 
         this.loginService = loginService;
