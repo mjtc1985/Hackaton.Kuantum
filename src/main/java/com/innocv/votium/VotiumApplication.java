@@ -1,7 +1,5 @@
 package com.innocv.votium;
 
-import com.ccl.architecture.jdbc.EnableJdbcRepositories;
-import com.ccl.architecture.security.ldap.annotations.EnableLdapSecurity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
